@@ -4,10 +4,11 @@ const cookieParser = require("cookie-parser");
 const indexRouter = require("./routes/index");
 const mongoose = require("mongoose");
 var cors = require('cors')
+require('dotenv').config()
 
 var app = express();
 mongoose
-  .connect(DATABASE_URL)
+  .connect(process.env.MONGODB_URI || "mongodb+srv://ifatimazahid:10pearls10@cluster0.zsurv.mongodb.net/disneyclone?retryWrites=true&w=majority")
   .catch((err) => console.error("Could not connect to database...", err));
 
 
