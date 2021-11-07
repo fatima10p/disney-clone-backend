@@ -7,9 +7,7 @@ var cors = require('cors')
 
 var app = express();
 mongoose
-  .connect(
-    "mongodb+srv://ifatimazahid:10pearls10@cluster0.zsurv.mongodb.net/disneyclone?retryWrites=true&w=majority"
-  )
+  .connect(DATABASE_URL)
   .catch((err) => console.error("Could not connect to database...", err));
 
 
