@@ -33,9 +33,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-const SERVICE_PORT = 8081;
-const server = app.listen(SERVICE_PORT);
-console.log(`Server is started & listening on port ${SERVICE_PORT}`)
+// const SERVICE_PORT = 8082;
+const server = app.listen(process.env.PORT);
+console.log(`Server is started & listening on port ${process.env.PORT}`)
 
 process.on('uncaughtException', (err) => {
    console.log(err,'uncaughtException')
